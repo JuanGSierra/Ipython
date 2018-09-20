@@ -1,16 +1,27 @@
 import time
 import matplotlib.pyplot as plt
-import numpy as np
 
-t0 = time.clock()
-lista = np.array([])
-def fibonacci(n):
-    if n==1 or n==2:
-        return 1
-        np.hstack((lista,time.clock()))
-    return fibonacci(n-1)+fibonacci(n-2)
+fibonacci=[]
+x=0
+y=1
+xarray=[]
+yarray=[]
+num = int(input("Numero de elementos:"))
 
-print (fibonacci(int(input("Fibonacci: "))))
-print (time.clock()-t0)
-plt.plot(lista)
-plt.show()
+start_time = time.time()
+for n in range(num):
+    yarray.append(x+y)
+    xarray.append(time.time() - start_time)
+    fibonacci.append(x+y)
+    aux = x + y
+    x = y
+    y = aux
+print(fibonacci)
+fig = plt.figure()
+print(xarray)
+print(yarray)
+plt.plot(xarray,yarray)
+fig.savefig("grafico.png")
+
+
+

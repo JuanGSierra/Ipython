@@ -35,3 +35,7 @@ public class Fibonacci {
         System.out.println("Fibonacci: " + c);
     }
 }
+/* short hace overflow en 24
+    int en 47
+    long en 93
+    big integer falla por memoria disponible */
